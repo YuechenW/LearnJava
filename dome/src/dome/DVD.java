@@ -1,6 +1,6 @@
 package dome;
 
-public class DVD {
+public class DVD extends Item{
 	private String title;
 	private String director;
     private int playingTime;
@@ -13,7 +13,7 @@ public class DVD {
 	}
 
 	public void print() {
-		 System.out.println(title+":"+director);
+		 System.out.println("DVD"+title+":"+director);
 		
 	}
 
