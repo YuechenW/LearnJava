@@ -27,15 +27,16 @@ public class Database {
 //		}
 		for(Item item:listItem) {
 			item.print();
+			System.out.println();
 		}
 	}
 	
 	public static void main(String[] args) {
 		Database db = new Database();
-		db.add(new CD("abc","abc",4,60,"..."));
+		db.add(new CD("abc","abc",4,60,"..."));//向上造型cast
 		db.add(new CD("def","def",4,60,"..."));
 		db.add(new DVD("xxx","aaa",60,"..."));
+		db.add(new VideoGame("ddd",10,true,"...",4));
 		db.list();
 	}
-
 }
