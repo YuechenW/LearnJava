@@ -2,8 +2,6 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-import sun.security.mscapi.KeyStore.MY;
-
 class MousePanel extends JPanel {
     int x,y;
     int mx,my;
@@ -29,8 +27,8 @@ class MousePanel extends JPanel {
     private class MyMouseAdapter extends MouseAdapter {
         public void mouseClicked(MouseEvent m) {
             x = m.getX();
-            x = m.getY();
-            if(m.getButton() == 2) {
+            y = m.getY();
+            if(m.getClickCount() == 2) {
                 if(msg.equals("I love you!"))
                 msg = "I hate you!!!";
             else
@@ -40,7 +38,7 @@ class MousePanel extends JPanel {
                 isRight = true;
             else
                 isRight = false;
-            repeat();
+            repaint();
         }
     }
 

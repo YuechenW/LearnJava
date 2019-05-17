@@ -3,8 +3,8 @@ import java.awt.event.*;
 import javax.swing.*;
 
 class KeyTest extends JPanel {
-    public Keytest() {
-        JTextField tField = new MyKeyAdapter(20);
+    public KeyTest() {
+        JTextField tField = new JTextField(20);
         add(tField);
         MyKeyAdapter bAction = new MyKeyAdapter();
         tField.addKeyListener(bAction);
@@ -17,6 +17,12 @@ private class MyKeyAdapter extends KeyAdapter {
         repaint();
     }
 
+    public void keyReleased(KeyEvent kevent) {
+        System.out.println("code:" + kevent.getKeyCode());
+        setBackground(Color.red);
+        repaint();
+    }
+
     public void keyTyped(KeyEvent kevent) {
         if(kevent.getKeyChar() == 'x')
             System.exit(0);
@@ -24,7 +30,7 @@ private class MyKeyAdapter extends KeyAdapter {
 }
 
     public static void main(String[] args) {
-        JFrame myapp = new JFrame("é”®ç›˜æµ‹è¯•ï¼");
+        JFrame myapp = new JFrame("¼üÅÌ²âÊÔ£¡");
         KeyTest mypanel = new KeyTest();
         myapp.add(mypanel);
         myapp.setSize(300, 300);
