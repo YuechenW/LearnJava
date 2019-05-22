@@ -1,13 +1,16 @@
+package mycanvas;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.*;
 
-class mycanvas extends JPanel {
+class Mycanvas extends JPanel {
     private int flag;
     public int x, y;
     
-    mycanvas() {
+    Mycanvas() {
         flag = 0;
     }
 
@@ -40,11 +43,7 @@ class mycanvas extends JPanel {
                 }
                 break;
             case 3: 
-                for(int i=0; i<360; i++) {
-                    x = i;
-                    y = 110 - (int)(4*Math.sqrt(x)) ;
-                    g.drawLine(x, y, x, y);
-                }
+            	System.exit(0);
                 break;
             default:
                 break;
@@ -52,16 +51,16 @@ class mycanvas extends JPanel {
     }
 }
 
-public class MyActionEventTest extends JFrame {
+ public class Main extends JFrame {
     JPanel p1;
     JButton b1,b2,b3;
-    mycanvas mc;
-    public MyActionEventTest() {
+    Mycanvas mc;
+    public Main() {
         setTitle("Painting show");
-        mc = new mycanvas();
+        mc = new Mycanvas();
         b1 = new JButton("SIN");
         b2 = new JButton("COS");
-        b3 = new JButton("SQRT");
+        b3 = new JButton("EXIT");
         p1 = new JPanel();
         p1.add(b1);
         p1.add(b2);
@@ -92,7 +91,7 @@ public class MyActionEventTest extends JFrame {
 
     public static void main(String[] args) {
         JFrame.setDefaultLookAndFeelDecorated(true);
-        MyActionEventTest myapp = new MyActionEventTest();
+        Main myapp = new Main();
         myapp.setSize(400,300);
         myapp.setVisible(true);
         myapp.addWindowFocusListener(new WindowDestroyer());
