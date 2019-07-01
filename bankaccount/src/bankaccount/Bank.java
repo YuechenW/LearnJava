@@ -108,7 +108,7 @@ public class Bank {
 	}
 	
 	public void load() {
-		ArrayList<String> arrayList = new ArrayList<>();;
+		ArrayList<String> arrayList = new ArrayList<>();
 		try {
 			File file = new File("load.txt");
 			InputStreamReader inputReader = new InputStreamReader(new FileInputStream(file));
